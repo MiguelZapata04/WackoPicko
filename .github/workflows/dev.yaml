@@ -14,5 +14,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v2
         with:
-          name: scan-results
+          name: desarrollo-seguro-final
           path: Desarrollo-seguro-entrega-final.csv
