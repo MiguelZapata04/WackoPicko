@@ -1,0 +1,4 @@
+namespace: my_app
+working_dir: /website
+strict: true
+file_size_limit: false
