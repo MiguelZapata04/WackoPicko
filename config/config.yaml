@@ -1,10 +1,11 @@
 namespace: myapp
 output:
-  file_path: ./Fluid-Attacks-Results.csv
+  file_path: ./Desarrollo-seguro-entrega-final.csv
   format: CSV
 working_dir: .
 strict: true
 language: ES
+file_size_limit: false
 apk:
   include:
     - glob(**/*.apk)

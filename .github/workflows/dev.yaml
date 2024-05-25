@@ -10,3 +10,9 @@ jobs:
         uses: docker://docker.io/fluidattacks/cli:latest
         with:
           args: skims scan config/config.yaml
+      - name: Download the results from the scanner
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: scan-results
+        path: Desarrollo-seguro-entrega-final.csv
