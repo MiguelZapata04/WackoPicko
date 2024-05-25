@@ -1,36 +1,20 @@
-namespace: my_app
-working_dir: /path/to/your/repository
-commit: sha_of_the_commit of the scanner's source repo
-language: EN
+namespace: myapp
 output:
-  file_path: /path/to/results.csv
+  file_path: ./Fluid-Attacks-Results.csv
   format: CSV
-checks:
-  - F052
-strict: true
-file_size_limit: false
+working_dir: .
+language: EN
+apk:
+  include:
+    - glob(**/*.apk)
 sast:
   include:
-    - ./relative/path/to/file/or/dir
-    - src/main/java/org/test/Test.java
-    - glob(*)
-    - glob(**/*.java)
-    - glob(src/**/test*.py)
+    - .
+  exclude:
+    - glob(**/node_modules/**)
+    - glob(**/test/**)
 sca:
   include:
     - .
-apk:
-  include:
-    - ./relative/path/to/build/awesome-app-v1.0.apk
-    - build/awesome-app-v1.0.apk
-cspm:
-  aws_credentials:
-    - access_key_id: "000f"
-      secret_access_key: "000f"
-dast:
-  urls:
-    - https://localhost.com
-    - https://localhost.com:443
-  ssl_checks: true
-  http_checks: true
-debug: true
+  exclude:
+    - glob(**/test/**)
